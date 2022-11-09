@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { Sequelize, DataTypes, UUID } = require('sequelize');
+const { Sequelize, DataTypes } = require('sequelize');
 const app = express();
 const port = 4000;
 const { v4: uuidv4 } = require('uuid');
@@ -8,7 +8,9 @@ const { v4: uuidv4 } = require('uuid');
 const countries_list = require('./countries_list.json');
 
 // CORS Middleware (Middleware = Processing Step when a request is done)
-app.use(cors());
+app.use(cors({
+    origin: 'https://addictive-media-frontend.herokuapp.com'
+}));
 
 const sequelize = new Sequelize('sql12553289', 'sql12553289', 'TESwRd1LCA', {
     dialect: 'mysql',
