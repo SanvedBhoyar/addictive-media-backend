@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { Sequelize, DataTypes } = require('sequelize');
 const app = express();
-const port = 4000;
+const port = process.env.port || 4000;
 const { v4: uuidv4 } = require('uuid');
 
 const countries_list = require('./countries_list.json');
